@@ -1,22 +1,21 @@
-import * as React from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MenuIcon from '@mui/icons-material/Menu';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import SearchIcon from '@mui/icons-material/Search';
+import { ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AppContext } from 'hooks/appcontext';
-import { useNavigate } from 'react-router-dom';
-import { Dropdown } from "components/dropdown";
 import InputBase from '@mui/material/InputBase';
-import useMediaQuery from "@mui/material/useMediaQuery";
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { alpha, styled, useTheme } from '@mui/material/styles';
-import SearchIcon from '@mui/icons-material/Search';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from "@mui/material/useMediaQuery";
 import logo from 'assets/images/logo.png';
+import { Dropdown } from "components/dropdown";
+import { AppContext } from 'hooks/appcontext';
+import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',

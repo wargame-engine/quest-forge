@@ -1,12 +1,10 @@
 import { Chip, Container, Link } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import equipments from 'assets/data/weapons.json';
-import rules from 'assets/data/rules.json';
-import React from 'react';
-import { findIndex } from 'lodash';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/system';
+import rules from 'assets/data/rules.json';
+import equipments from 'assets/data/weapons.json';
+import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Equipment() {
   const boonData: any = equipments.weapons;

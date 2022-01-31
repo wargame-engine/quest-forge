@@ -1,6 +1,6 @@
-import { Box, Checkbox, FormControlLabel, ListItem, ListItemButton, ListItemText, Switch, TextField, Typography } from '@mui/material';
+import { Box, Checkbox, FormControlLabel, ListItem, ListItemButton, ListItemText, Switch, TextField } from '@mui/material';
 import feats from 'assets/data/feats.json';
-import { sortBy, intersection, pickBy } from 'lodash';
+import { sortBy } from 'lodash';
 import React from 'react';
 
 type Props = {
@@ -12,11 +12,11 @@ export default function Feats(props: Props) {
   const { character, setCharacter } = props;
   const [searchText, setSearchText] = React.useState('');
   const [showAll, setShowAll] = React.useState(false);
-  const characterAttributes = Object.keys(pickBy(character?.attributes, (value: any) => value > 0));
+  // const characterAttributes = Object.keys(pickBy(character?.attributes, (value: any) => value > 0));
   const characterAbilities = new Set(character?.abilities);
-  const canUseEffect = (boon: any) => {
-    return intersection((boon.attribute || boon.attackAttributes || []).map((attr: any) => attr.toLocaleLowerCase()), characterAttributes).length
-  };
+  // const canUseEffect = (boon: any) => {
+  //   return intersection((boon.attribute || boon.attackAttributes || []).map((attr: any) => attr.toLocaleLowerCase()), characterAttributes).length
+  // };
   let effects = feats.feats;
   effects = sortBy(effects, 'name');
   effects = effects.filter((boon) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
@@ -51,24 +51,6 @@ export default function Feats(props: Props) {
           />
         </ListItemButton>
       </ListItem>
-    );
-  });
-  const currentAbilities = sortBy(character?.abilities ?? [], 'name').map((boon: any) => {
-    return (
-      <>
-        <TextField
-          key={boon}
-          fullWidth
-          sx={{ mb: 1 }}
-          size="small"
-          label={boon.name}
-          variant="outlined"
-          value={boon}
-        />
-        <Typography key={boon + 'description'} variant="body2">
-          {boon.description}
-        </Typography>
-      </>
     );
   });
   return (

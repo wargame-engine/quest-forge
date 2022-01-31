@@ -1,37 +1,21 @@
-import React from 'react';
-import logo from './logo.png';
-import './App.css';
-import {
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
-import { ThemeProvider, createTheme, SwipeableDrawer, PaletteMode, Stack } from '@mui/material';
+import { createTheme, PaletteMode, Stack, ThemeProvider } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MainAppBar } from 'components/app-bar';
 import { Appdrawer } from 'components/app-drawer';
+import { AppContext } from 'hooks/appcontext';
+import { useLocalStorage } from 'hooks/use-localstorage';
+import { ModalProvider } from 'hooks/use-modal';
+import React from 'react';
 import {
-  Boons,
-  Boon,
-  Banes,
-  Bane,
-  Attributes,
-  Equipment,
-  Equipments,
-  Home,
-  Feats,
-  Feat,
-  License,
-  CharacterCreator,
-  Rules,
-  Rule,
+  Navigate, Route, Routes
+} from "react-router-dom";
+import {
+  Attributes, Bane, Boon, Boons, CharacterCreator, Equipment,
+  Equipments, Feat, Feats, Home, License, Rule,
   Settings
 } from 'routes';
-import { Box } from '@mui/system';
-import { AppContext } from 'hooks/appcontext';
-import { ModalProvider } from 'hooks/use-modal';
-import { useLocalStorage } from 'hooks/use-localstorage';
 import { getColor } from 'utils/colors';
+import './App.css';
 
 function App() {
   const [userPrefs, setUserPrefs] = useLocalStorage("userPrefs", {});

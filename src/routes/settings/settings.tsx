@@ -1,25 +1,8 @@
-import PersonIcon from '@mui/icons-material/Person';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import WbCloudyIcon from '@mui/icons-material/WbCloudy';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { BottomNavigation, BottomNavigationAction, Box, Button, CardActionArea, Checkbox, Container, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, InputLabel, MenuItem, Paper, Radio, RadioGroup, Select, Tab, Tabs } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
+import { Container, FormControl, FormControlLabel, FormGroup, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import React from 'react';
-import { useNavigate, useParams } from "react-router-dom";
-import { colors } from 'utils/colors';
-import Attributes from 'routes/character-creator/attributes';
-import Abilities from 'routes/character-creator/abilities';
-import Basic from 'routes/character-creator/basic';
-import { useLocalStorage } from 'hooks/use-localstorage';
 import { AppContext } from 'hooks/appcontext';
-import useConfirmation from 'components/modals/confirm';
+import React from 'react';
+import { colors } from 'utils/colors';
 
 const THEMES = [
   { label: "Light", value: "light" },

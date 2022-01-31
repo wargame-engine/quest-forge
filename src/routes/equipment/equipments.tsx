@@ -15,7 +15,7 @@ export default function Boons() {
     return () => {
       setEnableSearch(false);
     }
-  }, []);
+  }, [ setEnableSearch ]);
   const boonList: Array<any> = Object.values(equipments.weapons).filter((boon) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
   return (
     <Container>

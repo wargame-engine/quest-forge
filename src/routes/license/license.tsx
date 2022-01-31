@@ -2,20 +2,11 @@ import { Container, Link } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import logo_license from 'assets/images/license.webp';
 
-type CardType = {
-  name: string,
-  icon: any,
-  text: string,
-  to?: string,
-  toAbs?: string,
-  color: any
-};
-
 export default function Home() {
   return (
     <Container sx={{ mt: 2 }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <img src={logo_license} width="50%" style={{ marginBottom: '1em' }} />
+        <img src={logo_license} alt="Open Legend Community Logo" width="50%" style={{ marginBottom: '1em' }} />
       </div>
       <Typography variant="h4" gutterBottom>
         Open Legend Community License

@@ -1,7 +1,7 @@
-import { Box, Checkbox, FormControlLabel, ListItem, ListItemButton, ListItemText, Switch, TextField, Typography } from '@mui/material';
+import { Box, Checkbox, FormControlLabel, ListItem, ListItemButton, ListItemText, Switch, TextField } from '@mui/material';
 import banes from 'assets/data/banes.json';
 import boons from 'assets/data/boons.json';
-import { sortBy, intersection, pickBy } from 'lodash';
+import { intersection, pickBy, sortBy } from 'lodash';
 import React from 'react';
 
 type Props = {
@@ -55,24 +55,6 @@ export default function Home(props: Props) {
           />
         </ListItemButton>
       </ListItem>
-    );
-  });
-  const currentAbilities = sortBy(character?.abilities ?? [], 'name').map((boon: any) => {
-    return (
-      <>
-        <TextField
-          key={boon}
-          fullWidth
-          sx={{ mb: 1 }}
-          size="small"
-          label={boon.name}
-          variant="outlined"
-          value={boon}
-        />
-        <Typography key={boon + 'description'} variant="body2">
-          {boon.description}
-        </Typography>
-      </>
     );
   });
   return (

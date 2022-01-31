@@ -1,38 +1,17 @@
-import PersonIcon from '@mui/icons-material/Person';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import WbCloudyIcon from '@mui/icons-material/WbCloudy';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import RefreshIcon from '@mui/icons-material/Refresh';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { BottomNavigation, BottomNavigationAction, Box, Button, CardActionArea, Container, Grid, Paper, Tab, Tabs } from '@mui/material';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
+import { Box, Button, Container, Tab, Tabs } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import React from 'react';
-import { useNavigate, useParams } from "react-router-dom";
-import { colors } from 'utils/colors';
-import Attributes from 'routes/character-creator/attributes';
-import Abilities from 'routes/character-creator/abilities';
-import Feats from 'routes/character-creator/feats';
-import Basic from 'routes/character-creator/basic';
-import { useLocalStorage } from 'hooks/use-localstorage';
-import { AppContext } from 'hooks/appcontext';
 import useConfirmation from 'components/modals/confirm';
-
-type CardType = {
-  name: string,
-  icon: any,
-  text: string,
-  to?: string,
-  toAbs?: string,
-  color: any
-};
+import { AppContext } from 'hooks/appcontext';
+import { useLocalStorage } from 'hooks/use-localstorage';
+import React from 'react';
+import { useParams } from "react-router-dom";
+import Abilities from 'routes/character-creator/abilities';
+import Attributes from 'routes/character-creator/attributes';
+import Basic from 'routes/character-creator/basic';
+import Feats from 'routes/character-creator/feats';
 
 export default function Home() {
-  const navigate = useNavigate();
   const confirm = () => {
     window.alert('Wooooopp');
   }
@@ -42,23 +21,23 @@ export default function Home() {
     onConfirm: confirm
   });
   let params = useParams();
-  const contextActions = [
-    {
-      name: 'Delete',
-      icon: <DeleteIcon />,
-      onClick: () => {
-        showConfirm();
-      }
-    }
-  ];
   const appContext = React.useContext(AppContext);
   const { setContextActions } = appContext;
   React.useEffect(() => {
+    const contextActions = [
+      {
+        name: 'Delete',
+        icon: <DeleteIcon />,
+        onClick: () => {
+          showConfirm();
+        }
+      }
+    ];
     setContextActions(contextActions);
     return () => {
       setContextActions([]);
     }
-  }, []);
+  }, [ setContextActions, showConfirm ]);
   const theCharacterId = params.id ?? '';
   const [ characters, setCharacters] = useLocalStorage("characters", {});
   const setCharacter = (data: any) => {

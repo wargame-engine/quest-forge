@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import stats from 'assets/data/stats.json';
 import { groupBy } from 'lodash';
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 
 type props = {
   character: any,

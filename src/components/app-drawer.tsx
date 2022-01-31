@@ -1,26 +1,22 @@
-import { ExpandLess, ExpandMore, Home, StarBorder } from '@mui/icons-material';
-import PersonIcon from '@mui/icons-material/Person';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import WbCloudyIcon from '@mui/icons-material/WbCloudy';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { ExpandLess, ExpandMore, Home } from '@mui/icons-material';
 import ArticleIcon from '@mui/icons-material/Article';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import StraightenIcon from '@mui/icons-material/Straighten';
+import BoltIcon from '@mui/icons-material/Bolt';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import ConstructionIcon from '@mui/icons-material/Construction';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
-import BoltIcon from '@mui/icons-material/Bolt';
-import { Collapse, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Menu, Toolbar, Typography } from '@mui/material';
+import StraightenIcon from '@mui/icons-material/Straighten';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import { Collapse, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { AppContext } from 'hooks/appcontext';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from 'assets/images/logo.png';
 import { Dropdown } from './dropdown';
 
 type NavItem = {

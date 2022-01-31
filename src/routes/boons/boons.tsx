@@ -1,12 +1,12 @@
 import { CardActionArea, Chip, Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import boons from 'assets/data/boons.json';
 import banes from 'assets/data/banes.json';
+import boons from 'assets/data/boons.json';
 import { AppContext } from 'hooks/appcontext';
+import { sortBy } from 'lodash';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { sortBy } from 'lodash';
 
 export default function Boons() {
   const appContext = React.useContext(AppContext);
@@ -16,7 +16,7 @@ export default function Boons() {
     return () => {
       setEnableSearch(false);
     }
-  }, []);
+  }, [ setEnableSearch ]);
   let boonList = [ ...Object.values(boons.boons), ...Object.values(banes.banes) ].filter((boon: any) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
   boonList = sortBy(boonList, 'name');
   const navigate = useNavigate();

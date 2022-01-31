@@ -1,7 +1,6 @@
-import { PaletteMode } from '@mui/material';
 import React from 'react';
 
-type AppContext = {
+type AppContextType = {
   drawerOpen: boolean,
   setDrawerOpen: Function,
   enableSearch: any,
@@ -19,7 +18,7 @@ type AppContext = {
   setUserPrefs: Function
 }
 
-export const AppContext = React.createContext<AppContext>({
+export const AppContext = React.createContext<AppContextType>({
   drawerOpen: false,
   setDrawerOpen: () => {},
   enableSearch: false,

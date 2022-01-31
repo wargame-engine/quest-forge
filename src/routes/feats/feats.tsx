@@ -14,7 +14,7 @@ export default function Boons() {
     return () => {
       setEnableSearch(false);
     }
-  }, []);
+  }, [ setEnableSearch ]);
   const boonList = Object.values(boons.feats).filter((boon) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
   const navigate = useNavigate();
 
