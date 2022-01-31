@@ -1,4 +1,4 @@
-import { createTheme, PaletteMode, Stack, ThemeProvider } from '@mui/material';
+import { createTheme, PaletteMode, Stack, ThemeProvider, useMediaQuery } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MainAppBar } from 'components/app-bar';
 import { Appdrawer } from 'components/app-drawer';
@@ -25,13 +25,13 @@ function App() {
   const [enableSearch, setEnableSearch] = React.useState<boolean>(false);
   const [searchMode, setSearchMode] = React.useState<boolean>(false);
   const [searchText, setSearchText] = React.useState<string>('');
-  const setSearchEnabled = (enabled: boolean) => {
+  const setSearchEnabled = React.useCallback((enabled: boolean) => {
     setEnableSearch(enabled);
     if (!enabled) {
       setSearchText('');
       setSearchMode(false);
     }
-  }
+  }, []);
   const appContextValue = {
     drawerOpen,
     setDrawerOpen,
@@ -48,10 +48,14 @@ function App() {
     userPrefs,
     setUserPrefs
   };
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const browserTheme = prefersDarkMode ? 'dark' : 'light';
+  const userTheme = userPrefs?.theme;
+  const themeId = (!userTheme || userTheme === 'system') ? browserTheme : userTheme;
   const userPrimaryColor = getColor(userPrefs?.primaryColor)?.import || getColor('blue')?.import;
   const theme = createTheme({
     palette: {
-      mode: userPrefs?.theme,
+      mode: themeId,
       primary: userPrimaryColor
     },
     typography: {
