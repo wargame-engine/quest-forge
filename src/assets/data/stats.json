@@ -1,0 +1,24 @@
+{
+  "attributes": {
+    "Agility": {"name": "Agility", "description": "Dodge attacks, move with stealth, perform acrobatics, shoot a bow, pick a pocket.", "category": "Physical Attributes"},
+    "Fortitude": {"name": "Fortitude", "description": "Resist poison, shrug off pain, survive in a desert, wear heavy armor.", "category": "Physical Attributes"},
+    "Might": {"name": "Might", "description": "Swing a maul, jump over a chasm, break down a door, wrestle a foe to submission.", "category": "Physical Attributes"},
+    "Learning": {"name": "Learning", "description": "Recall facts about history, arcane magic, the natural world, or any information you picked up from an external source.", "category": "Mental Attributes"},
+    "Logic": {"name": "Logic", "description": "Innovate a new crafting method, decipher a code, jury-rig a device, get the gist of a language you don't speak.", "category": "Mental Attributes"},
+    "Perception": {"name": "Perception", "description": "Sense ulterior motives, track someone, catch a gut feeling, spot a hidden foe, find a secret door.", "category": "Mental Attributes"},
+    "Will": {"name": "Will", "description": "Maintain your resolve, resist torture, study long hours, stay awake on watch, stave off insanity.", "category": "Mental Attributes"},
+    "Deception": {"name": "Deception", "description": "Tell a lie, bluff at cards, disguise yourself, spread rumors, swindle a sucker.", "category": "Social Attributes"},
+    "Persuasion": {"name": "Persuasion", "description": "Negotiate a deal, convince someone, haggle a good price, pry information.", "category": "Social Attributes"},
+    "Presence": {"name": "Presence", "description": "Give a speech, sing a song, inspire an army, exert your force of personality, have luck smile upon you.", "category": "Social Attributes"},
+    "Alteration": {"name": "Alteration", "description": "Change shape, alter molecular structures, transmute one material into another.", "category": "Extraordinary Attributes"},
+    "Creation": {"name": "Creation", "description": "Channel higher powers, manifest something from nothing, regenerate, divinely bolster.", "category": "Extraordinary Attributes"},
+    "Energy": {"name": "Energy", "description": "Create and control the elements—fire, cold, electricity.", "category": "Extraordinary Attributes"},
+    "Entropy": {"name": "Entropy", "description": "Disintegrate matter, kill with a word, create undead, sicken others", "category": "Extraordinary Attributes"},
+    "Influence": {"name": "Influence", "description": "Control the minds of others, speak telepathically, instill fear, create illusory figments, cloak with invisibility.", "category": "Extraordinary Attributes"},
+    "Movement": {"name": "Movement", "description": "Teleport, fly, hasten, telekinetically push.", "category": "Extraordinary Attributes"},
+    "Prescience": {"name": "Prescience", "description": "See the future, read minds or auras, view from afar, detect magic or evil, communicate with extraplanar entities.", "category": "Extraordinary Attributes"},
+    "Protection": {"name": "Protection", "description": "Protect from damage, break supernatural influence, dispel magic, exile extradimensional beings.", "category": "Extraordinary Attributes"}
+  },
+  "scores": {"1": "1d4", "2": "1d6", "3": "1d8", "4": "2d6", "5": "1d10", "6": "2d8", "7": "3d8", "8": "4d8", "9": "1d4", "10": "1d4"},
+  "scores_alt": {"0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}
+}

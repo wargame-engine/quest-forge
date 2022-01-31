@@ -1,0 +1,198 @@
+{
+  "weapons": {
+    "bastard sword": {
+      "name": "Bastard Sword",
+      "damage": "1d8",
+      "types": ["Two-handed", "Melee"],
+      "range": 0,
+      "wealth": 2,
+      "bulk": 3,
+      "attackAttributes": ["Agility", "Might"],
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown"}
+    },
+    "blow gun": {"name": "Blow Gun", "range": 25, "wealth": 1, "properties": {"forceful": "Forceful", "precise": "Precise"}, "banes": {"immobile": "Immobile"}},
+    "claymore": {"name": "Claymore", "type": "Two-handed", "range": "Melee", "wealth": 2, "attackAttributes": ["Might", "Agility"], "banes": {"forced move": "Forced Move", "knockdown": "Knockdown"}},
+    "club": {"name": "Club", "range": 0, "wealth": 1, "properties": {"forceful": "Forceful"}, "banes": {"knockdown": "Knockdown", "stunned": "Stunned"}},
+    "dagger": {
+      "name": "Dagger",
+      "wealth": 2,
+      "bulk": 1,
+      "types": ["One-handed", "Melee", "Close Ranged"],
+      "damage": "1d4",
+      "attackAttributes": ["Might", "Agility"],
+      "properties": {"swift": "Swift"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "dart": {"name": "Dart", "range": 25, "wealth": 1, "properties": {"forceful": "Forceful", "precise": "Precise"}, "banes": {"immobile": "Immobile"}},
+    "falchion": {
+      "name": "Falchion",
+      "hands": 3,
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "firebomb elixir": {
+      "name": "Firebomb Elixir",
+      "range": 25,
+      "wealth": 2,
+      "properties": {"area": "10' cube", "expendable": "Expendable", "precise": "Precise"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "persistent damage": "Persistent Damage"}
+    },
+    "glaive": {
+      "name": "Glaive",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "reach": "Reach"},
+      "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}
+    },
+    "great axe": {
+      "name": "Great Axe",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "heavy": "Heavy"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}
+    },
+    "greatsword": {
+      "name": "Greatsword",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "heavy": "Heavy", "precise": "Precise"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown"}
+    },
+    "halberd": {
+      "name": "Halberd",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "reach": "Reach"},
+      "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}
+    },
+    "handgun": {"name": "Handgun", "range": 25, "wealth": 2, "properties": {"precise": "Precise"}, "banes": {"persistent damage": "Persistent Damage", "slowed": "Slowed"}},
+    "hatchet": {
+      "name": "Hatchet",
+      "range": 25,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise", "swift": "Swift"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "heavy crossbow": {"name": "Heavy Crossbow", "range": 125, "wealth": 2, "properties": {"precise": "Precise"}, "banes": {"persistent damage": "Persistent Damage", "slowed": "Slowed"}},
+    "improvised weapon": {"name": "Improvised Weapon", "range": 0, "wealth": 1, "properties": {"forceful": "Forceful"}, "banes": {"knockdown": "Knockdown", "stunned": "Stunned"}},
+    "katana": {
+      "name": "Katana",
+      "hands": 3,
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "light crossbow": {"name": "Light Crossbow", "range": 75, "wealth": 2, "properties": {"precise": "Precise"}, "banes": {"immobile": "Immobile", "persistent damage": "Persistent Damage"}},
+    "long spear": {
+      "name": "Long Spear",
+      "range": 25,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise", "reach": "Reach"},
+      "banes": {"disarmed": "Disarmed", "immobile": "Immobile", "persistent damage": "Persistent Damage"}
+    },
+    "longbow": {"name": "Longbow", "range": 125, "wealth": 2, "properties": {"precise": "Precise"}, "banes": {"persistent damage": "Persistent Damage", "slowed": "Slowed"}},
+    "longsword": {
+      "name": "Longsword",
+      "hands": 3,
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "mace": {"name": "Mace", "range": 0, "wealth": 2, "properties": {"forceful": "Forceful"}, "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}},
+    "maul": {
+      "name": "Maul",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "heavy": "Heavy"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}
+    },
+    "naginata": {
+      "name": "Naginata",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "reach": "Reach"},
+      "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}
+    },
+    "no-dachi": {
+      "name": "No-dachi",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "heavy": "Heavy", "precise": "Precise"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown"}
+    },
+    "pitchfork": {"name": "Pitchfork", "range": 0, "wealth": 1, "properties": {"forceful": "Forceful"}, "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}},
+    "scimitar": {
+      "name": "Scimitar",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "short spear": {
+      "name": "Short Spear",
+      "hands": 3,
+      "range": 50,
+      "wealth": 1,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "immobile": "Immobile", "persistent damage": "Persistent Damage"}
+    },
+    "short sword": {
+      "name": "Short Sword",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"forceful": "Forceful", "precise": "Precise"},
+      "banes": {"disarmed": "Disarmed", "persistent damage": "Persistent Damage"}
+    },
+    "shortbow": {
+      "name": "Shortbow",
+      "type": "Two-handed Medium Ranged",
+      "range": 75,
+      "wealth": 2,
+      "properties": {"precise": "Precise"},
+      "banes": {"knockdown": "Knockdown", "persistent damage": "Persistent Damage", "slowed": "Slowed"}
+    },
+    "small shield": {
+      "name": "Small Shield",
+      "range": 0,
+      "wealth": 2,
+      "properties": {"defensive": "Defensive 1", "forceful": "Forceful"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}
+    },
+    "staff": {
+      "name": "Staff",
+      "range": 0,
+      "wealth": 1,
+      "damage": "1d8",
+      "types": ["Two-handed", "Melee", "Medium Ranged"],
+      "attackAttributes": ["Might", "Energy", "Alteration"],
+      "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}
+    },
+    "wand": {
+      "name": "Wand",
+      "types": ["One-handed", "Melee", "Medium Ranged"],
+      "wealth": 1,
+      "damage": "1d4",
+      "attackAttributes": ["Might", "Energy", "Alteration"],
+      "banes": {"forced move": "Forced Move", "immobile": "Immobile", "knockdown": "Knockdown"}
+    },
+    "tower shield": {
+      "name": "Tower Shield",
+      "range": 0,
+      "wealth": 3,
+      "properties": {"defensive": "Defensive 2", "forceful": "Forceful"},
+      "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}
+    },
+    "unarmed strike": {
+      "name": "Unarmed Strike",
+      "range": 0,
+      "wealth": 0,
+      "properties": {"forceful": "Forceful", "precise": "Precise", "swift": "Swift"},
+      "banes": {"knockdown": "Knockdown", "stunned": "Stunned"}
+    },
+    "warhammer": {"name": "Warhammer", "range": 0, "wealth": 2, "properties": {"forceful": "Forceful"}, "banes": {"forced move": "Forced Move", "knockdown": "Knockdown", "stunned": "Stunned"}}
+  }
+}
