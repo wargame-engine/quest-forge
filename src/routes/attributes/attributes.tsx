@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import stats from 'assets/data/stats.json';
 import React from 'react';
 
-export default function Boons() {
+export default function Attributes() {
   const boonList = Object.values(stats.attributes);
 
   return (

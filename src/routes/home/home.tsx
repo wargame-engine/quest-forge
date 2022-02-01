@@ -1,8 +1,7 @@
+import BoltIcon from '@mui/icons-material/Bolt';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import PersonIcon from '@mui/icons-material/Person';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import WbCloudyIcon from '@mui/icons-material/WbCloudy';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import { Box, CardActionArea, Container, Grid, Stack } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -46,18 +45,18 @@ export default function Home() {
       color: colors.green.import[900],
     },
     {
-      name: "Boons",
-      icon: <WbSunnyIcon style={{ fontSize: iconSize }} />,
-      text: "Browse all available boons and their effects.",
-      to: "/boons",
+      name: "Effects",
+      icon: <BoltIcon style={{ fontSize: iconSize }} />,
+      text: "Browse all available status effects and conditions.",
+      to: "/effects",
       color: colors.brown.import[500],
     },
     {
-      name: "Banes",
-      icon: <WbCloudyIcon style={{ fontSize: iconSize }} />,
-      text: "Browse all available banes and their effects.",
-      to: "/banes",
-      color: colors.purple.import[600],
+      name: "Characters",
+      icon: <PersonIcon style={{ fontSize: iconSize }} />,
+      text: "Browse and edit your saved characters.",
+      to: "/characters",
+      color: colors.brown.import[500],
     }
   ];
   return (
@@ -72,8 +71,8 @@ export default function Home() {
         columnSpacing={2}
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
-        {CARDS.map((card) => (
-          <Grid item xs={4}>
+        {CARDS.map((card: any, index: number) => (
+          <Grid item xs={4} key={index}>
             <Card>
               <CardActionArea
                 onClick={() =>

@@ -1,12 +1,12 @@
 import { CardActionArea, Chip, Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
-import equipments from 'assets/data/weapons.json';
+import equipment from 'assets/data/equipment.json';
 import { AppContext } from 'hooks/appcontext';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Boons() {
+export default function Equipments() {
   const navigate = useNavigate();
   const appContext = React.useContext(AppContext);
   const { searchText, setEnableSearch } = appContext;
@@ -16,7 +16,15 @@ export default function Boons() {
       setEnableSearch(false);
     }
   }, [ setEnableSearch ]);
-  const boonList: Array<any> = Object.values(equipments.weapons).filter((boon) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
+  const weapons: Record<string, any> = equipment.equipment;
+  const equipmentMapped = Object.keys(weapons).map((equipId: string) => {
+    const theItem = weapons[equipId];
+    return {
+      ...theItem,
+      id: equipId
+    }
+  });
+  const boonList: Array<any> = equipmentMapped.filter((boon) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
   return (
     <Container>
       <Typography align="center" variant="h4" sx={{ my: 2 }}>
@@ -27,7 +35,7 @@ export default function Boons() {
           <Card
             className="no-break"
             key={boon.name}
-            onClick={() => navigate(`/equipment/${boon.name}`)}
+            onClick={() => navigate(`/equipment/${boon.id}`)}
             sx={{ mb: 1 }}
           >
             <CardActionArea
@@ -44,7 +52,7 @@ export default function Boons() {
                 {Object.values(boon?.attackAttributes ?? {}).map((attribute: any) => (
                   <Chip label={attribute ?? ''} color="success" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-                {Object.values(boon?.properties ?? {}).map((attribute: any) => (
+                {Object.values(boon?.rules ?? {}).map((attribute: any) => (
                   <Chip label={attribute ?? ''} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
                 {!!boon?.bulk && <Chip label={boon.bulk + " BL" ?? '-'} color="info" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />}

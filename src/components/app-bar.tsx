@@ -79,27 +79,12 @@ export function MainAppBar() {
           <MenuIcon />
         </IconButton>}
         <Button onClick={() => navigate('/')} sx={{ color: 'inherit', p: 0 }}>
-          <img src={logo} alt="Quest Forge" style={{ height: fullScreen ? '40px' : '35px', marginRight: "5px" }} />
+          <img src={logo} alt="Quest Forge" style={{ height: fullScreen ? '35px' : '30px', marginRight: "8px" }} />
           <Typography noWrap fontSize={fullScreen ? 20 : 18} fontWeight="bold" sx={{ color: 'inherit' }} style={{ textTransform: 'none' }}>
             Quest Forge
           </Typography>
         </Button>
         <div style={{ flexGrow: 1 }} />
-        {/* <FormGroup>
-          <FormControlLabel control={<Switch color="secondary" value={appContext.appTheme === 'light'} onChange={
-            (event) => appContext.setAppTheme(event.target.checked ? 'light' : 'dark')
-          } />} label="Light Mode" />
-        </FormGroup> */}
-        {contextActions?.slice(0, numActionsToShow)?.map((action: any, index: number) => (
-          <IconButton
-            size="large"
-            color="inherit"
-            title={action.name}
-            onClick={() => action.onClick()}
-          >
-            {action.icon}
-          </IconButton>
-        ))}
         {appContext.enableSearch && <IconButton
           size="large"
           aria-label="show more"
@@ -110,6 +95,17 @@ export function MainAppBar() {
         >
           <SearchIcon />
         </IconButton>}
+        {contextActions?.slice(0, numActionsToShow)?.map((action: any, index: number) => (
+          <IconButton
+            key={index}
+            size="large"
+            color="inherit"
+            title={action.name}
+            onClick={() => action.onClick()}
+          >
+            {action.icon}
+          </IconButton>
+        ))}
         {!!(contextActions?.length - numActionsToShow > 0) && <Dropdown>
           {({ handleClose, open, handleOpen, anchorElement }: any) => (
             <>
@@ -136,7 +132,7 @@ export function MainAppBar() {
                 }}
               >
                 {contextActions?.slice(numActionsToShow)?.map((action: any, index: number) => (
-                  <MenuItem onClick={() => action.onClick()}>
+                  <MenuItem key={index} onClick={() => action.onClick()}>
                     <ListItemIcon>
                       {action.icon}
                     </ListItemIcon>

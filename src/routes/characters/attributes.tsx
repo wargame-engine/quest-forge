@@ -19,10 +19,10 @@ export default function Attributes(props: props) {
         const group = groups[groupKey];
         return (
           <>
-            <Typography variant="h5" key={groupKey} gutterBottom>
+            <Typography variant="h5" key={groupKey} sx={{ mb: 2 }}>
               {groupKey}
             </Typography>
-            <Grid container sx={{ mb: 3 }} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid key={groupKey} container sx={{ mb: 3 }} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
               <>
                 {group.map((boon: any) => {
                   const boonId = boon.name.toLocaleLowerCase();
@@ -31,6 +31,7 @@ export default function Attributes(props: props) {
                     <TextField
                       key={boonId}
                       fullWidth
+                      type="number"
                       sx={{ mb: 1 }}
                       size="small"
                       label={boon.name}

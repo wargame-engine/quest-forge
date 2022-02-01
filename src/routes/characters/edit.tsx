@@ -6,10 +6,11 @@ import { AppContext } from 'hooks/appcontext';
 import { useLocalStorage } from 'hooks/use-localstorage';
 import React from 'react';
 import { useParams } from "react-router-dom";
-import Abilities from 'routes/character-creator/abilities';
-import Attributes from 'routes/character-creator/attributes';
-import Basic from 'routes/character-creator/basic';
-import Feats from 'routes/character-creator/feats';
+import Abilities from './abilities';
+import Attributes from './attributes';
+import Basic from './basic';
+import Feats from './feats';
+import Equipment from './equipment';
 
 export default function Home() {
   const confirm = () => {
@@ -67,7 +68,7 @@ export default function Home() {
     },
     equipment: {
       name: "Equipment",
-      tab: <Basic character={theCharacter} setCharacter={setCharacter} />
+      tab: <Equipment character={theCharacter} setCharacter={setCharacter} />
     },
   };
   return (

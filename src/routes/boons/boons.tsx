@@ -27,10 +27,10 @@ export default function Boons() {
         Effects List
       </Typography>
       <div>
-        {boonList.map((boon: any) => (
+        {boonList.map((boon: any, index: number) => (
           <Card
             className="no-break"
-            key={boon.name}
+            key={index}
             onClick={() => boon?.attribute ? navigate(`/boon/${boon.name}`) : navigate(`/bane/${boon.name}`)}
             sx={{ mb: 1 }}
           >
@@ -44,8 +44,8 @@ export default function Boons() {
                 <Chip label={boon.power.join('/') + " PL"} color="info" variant="outlined" size="small" sx={{ ml: 1 }} />
               </Typography>
               <Typography>
-                {(boon?.attribute ?? boon.attackAttributes).map((attribute: any) => (
-                  <Chip label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+                {(boon?.attribute ?? boon.attackAttributes).map((attribute: any, index: number) => (
+                  <Chip key={index} label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
               </Typography>
               <Typography>

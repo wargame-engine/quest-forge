@@ -6,7 +6,7 @@ import { AppContext } from 'hooks/appcontext';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Boons() {
+export default function Feats() {
   const appContext = React.useContext(AppContext);
   const { searchText, setEnableSearch } = appContext;
   React.useEffect(() => {

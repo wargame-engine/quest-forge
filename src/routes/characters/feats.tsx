@@ -23,10 +23,11 @@ export default function Feats(props: Props) {
   const effectOptions = effects.map((boon, index) => {
     return (
       <ListItem
+        key={boon.name}
         sx={{ p: 0 }}
         secondaryAction={
           <Checkbox
-            edge="end"
+            sx={{ mr: -3 }}
             checked={characterAbilities.has(boon.name)}
             onChange={(event, value) => {
               value ? characterAbilities.add(boon.name) : characterAbilities.delete(boon.name)

@@ -96,7 +96,7 @@ export function Appdrawer() {
           id: 'characters',
           name: 'Characters',
           icon: <PersonIcon />,
-          to: '/characters/new'
+          to: '/characters'
         }
       ]
     },
@@ -116,13 +116,13 @@ export function Appdrawer() {
       to: '/license'
     }
   ];
-  const renderMenuItem = (item: NavItem) => {
+  const renderMenuItem = (item: NavItem, index: number) => {
     if (item.id === 'divider') {
-      return <Divider key={item.id} />;
+      return <Divider key={index} />;
     }
     if (item.children) {
       return (
-        <Dropdown>
+        <Dropdown key={index}>
           {({ handleClose, open, handleOpen, anchorElement }: any) => (
             <>
               <ListItemButton onClick={() => open ? handleClose() : handleOpen()}>
