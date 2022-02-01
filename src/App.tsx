@@ -95,7 +95,7 @@ function App() {
     },
   });
   return (
-    <div style={{ marginBottom: '1em' }}>
+    <div>
       <ThemeProvider theme={theme}>
         <ModalProvider>
           <SnackbarProvider

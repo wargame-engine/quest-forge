@@ -1,46 +1,18 @@
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Box, Button, Container, Tab, Tabs } from '@mui/material';
+import { AppBar, Box, Button, Container, Tab, Tabs, Toolbar } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import useConfirmation from 'components/modals/confirm';
-import { AppContext } from 'hooks/appcontext';
 import { useLocalStorage } from 'hooks/use-localstorage';
 import React from 'react';
 import { useParams } from "react-router-dom";
 import Abilities from './abilities';
 import Attributes from './attributes';
 import Basic from './basic';
-import Feats from './feats';
 import Equipment from './equipment';
+import Feats from './feats';
 
 export default function Home() {
-  const confirm = () => {
-    window.alert('Wooooopp');
-  }
-  const showConfirm = useConfirmation({
-    title: 'Delete Character',
-    text: 'Are you sure you want to delete this character?',
-    onConfirm: confirm
-  });
   let params = useParams();
-  const appContext = React.useContext(AppContext);
-  const { setContextActions } = appContext;
-  React.useEffect(() => {
-    const contextActions = [
-      {
-        name: 'Delete',
-        icon: <DeleteIcon />,
-        onClick: () => {
-          showConfirm();
-        }
-      }
-    ];
-    setContextActions(contextActions);
-    return () => {
-      setContextActions([]);
-    }
-  }, [ setContextActions, showConfirm ]);
   const theCharacterId = params.id ?? '';
-  const [ characters, setCharacters] = useLocalStorage("characters", {});
+  const [characters, setCharacters] = useLocalStorage("characters", {});
   const setCharacter = (data: any) => {
     setCharacters({
       ...characters,
@@ -84,15 +56,17 @@ export default function Home() {
         </Tabs>
       </Box>
       {Object.values(TABS)[currentTab]?.tab}
-      <div style={{ display: 'flex', flex: 1, margin: '0.5em 0' }}>
-        <Button variant="contained" onClick={() => setCurrentTab(currentTab - 1)} disabled={currentTab === 0}>
-          Previous
-        </Button>
-        <div style={{ flexGrow: 1 }}></div>
-        <Button variant="contained" onClick={() => setCurrentTab(currentTab + 1)} disabled={currentTab === (Object.values(TABS).length - 1)}>
-          Next
-        </Button>
-      </div>
+      <Toolbar />
+      <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+        <Toolbar sx={{ justifyContent: "end" }}>
+          <Button variant="contained" onClick={() => setCurrentTab(currentTab - 1)} disabled={currentTab === 0}>
+            Previous
+          </Button>
+          <Button sx={{ ml: 1 }} variant="contained" onClick={() => setCurrentTab(currentTab + 1)} disabled={currentTab === (Object.values(TABS).length - 1)}>
+            Next
+          </Button>
+        </Toolbar>
+      </AppBar>
     </Container>
   );
 };
