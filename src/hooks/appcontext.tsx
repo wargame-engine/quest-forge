@@ -13,7 +13,8 @@ type AppContextType = {
   setSearchText: Function
   userPrefs: {
     theme?: string,
-    primaryColor?: string
+    primaryColor?: string,
+    secondaryColor?: string
   },
   setUserPrefs: Function
 }

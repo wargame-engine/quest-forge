@@ -55,8 +55,6 @@ export default function Equipments() {
                 {Object.values(boon?.rules ?? {}).map((attribute: any, index: number) => (
                   <Chip key={index} label={attribute ?? ''} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-                {!!boon?.bulk && <Chip label={boon.bulk + " BL" ?? '-'} color="info" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />}
-                <Chip label={boon.wealth + " WL" ?? '-'} color="success" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
               </Box>
               <Typography>
                 {boon?.description}

@@ -16,12 +16,13 @@ export default function Home() {
     return <MenuItem key={index} value={color.id}>{color.name}</MenuItem>;
   });
   const primaryColor = userPrefs?.primaryColor;
+  const secondaryColor = userPrefs?.secondaryColor;
   return (
     <Container sx={{ mt: 2 }}>
       <Typography variant="h4" align="center" gutterBottom>
         Settings
       </Typography>
-      <FormGroup>
+      <FormGroup sx={{ mb: 2 }}>
         <FormControl component="fieldset">
           <FormLabel component="legend">Theme</FormLabel>
           <RadioGroup
@@ -47,7 +48,7 @@ export default function Home() {
           </RadioGroup>
         </FormControl>
       </FormGroup>
-      <FormGroup sx={{ my: 1 }}>
+      <FormGroup sx={{ mb: 3 }}>
         <FormControl>
           <InputLabel id="primary-color-label">Primary Color</InputLabel>
           <Select
@@ -60,6 +61,26 @@ export default function Home() {
               setUserPrefs({
                 ...userPrefs,
                 primaryColor: event.target.value,
+              })
+            }}
+          >
+            {colorOptions}
+          </Select>
+        </FormControl>
+      </FormGroup>
+      <FormGroup sx={{ mb: 3 }}>
+        <FormControl>
+          <InputLabel id="secondary-color-label">Secondary Color</InputLabel>
+          <Select
+            labelId="secondary-color-label"
+            size="small"
+            id="secondary-color"
+            value={secondaryColor}
+            label="Secondary Color"
+            onChange={(event) => {
+              setUserPrefs({
+                ...userPrefs,
+                secondaryColor: event.target.value,
               })
             }}
           >

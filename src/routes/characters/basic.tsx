@@ -27,13 +27,13 @@ export default function Home(props: props) {
           size="small"
           rows={4}
           fullWidth
-          label="Appearance"
+          label="Description"
           multiline
-          value={character.appearance}
+          value={character.description}
           onChange={((event) => {
             setCharacter({
               ...character,
-              appearance: event?.target?.value
+              description: event?.target?.value
             });
           })}
         />

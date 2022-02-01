@@ -60,18 +60,18 @@ export default function Equipment() {
             Critical Effects
           </Typography>
           <Typography>
-            {Object.values(theBoon?.banes ?? {}).map((attribute: any, index: number) => (
-              <Link key={index} component="button" onClick={() => navigate(`/bane/${attribute}`)} sx={{ mr: 1, mb: 1 }}>{attribute}</Link>
+            {Object.keys(theBoon?.criticals ?? {}).map((attribute: any, index: number) => (
+              <Link key={index} component="button" onClick={() => navigate(`/bane/${attribute?.replace(' ', '_') || ''}`)} sx={{ mr: 1, mb: 1 }}>{theBoon?.criticals[attribute]}</Link>
             ))}
           </Typography>
         </Box>
       </Box>
-      <div className="no-break">
-        {!!theBoon?.properties && <Typography variant="h6" gutterBottom>
-          Properties
-        </Typography>}
-        <Box className={Object.values(theBoon?.properties ?? {}).length > 1 ? "columns" : ""}>
-          {Object.keys(theBoon?.properties ?? {}).map((attribute: any, index: number) => {
+      {!!theBoon?.rules && <div className="no-break">
+         <Typography variant="h6" gutterBottom>
+          Rules
+        </Typography>
+        <Box className={Object.values(theBoon?.rules ?? {}).length > 1 ? "columns" : ""}>
+          {Object.keys(theBoon?.rules ?? {}).map((attribute: any, index: number) => {
             const theRule = ruleData[attribute.toLocaleLowerCase()];
             if (!theRule) {
               return (
@@ -85,13 +85,13 @@ export default function Equipment() {
             return (
               <>
                 <Typography key={index} className="no-break" paragraph>
-                  <strong>{theBoon?.properties[attribute]}</strong> - {theRule?.description}
+                  <strong>{theBoon?.rules[attribute]}</strong> - {theRule?.description}
                 </Typography>
               </>
             )
           })}
         </Box>
-      </div>
+      </div>}
     </Container>
   );
 }

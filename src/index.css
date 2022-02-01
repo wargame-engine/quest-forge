@@ -33,3 +33,25 @@ code {
 .no-break {
   break-inside: avoid;
 }
+
+.logo {
+  height: 300px;
+  margin: auto;
+  padding: 75px 0;
+  opacity: 1.0;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+@media (max-width: 768px) {
+  .logo {
+    height: 250px;
+    padding: 70px 0;
+  }
+}
+@media (max-width: 512px) {
+  .logo {
+    height: 200px;
+    padding: 65px 0;
+  }
+}

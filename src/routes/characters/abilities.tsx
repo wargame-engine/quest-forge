@@ -26,12 +26,12 @@ export default function Home(props: Props) {
   const effectOptions = effects.map((boon, index) => {
     return (
       <ListItem
-        key={boon.name}
+        key={index}
         sx={{ p: 0 }}
         secondaryAction={
           <Checkbox
             sx={{ mr: -3 }}
-            disabled={!canUseEffect(boon) && !characterAbilities.has(boon.name)}
+            disabled={(!canUseEffect(boon) || characterAbilities.size >= 8) && !characterAbilities.has(boon.name)}
             checked={characterAbilities.has(boon.name)}
             onChange={(event, value) => {
               value ? characterAbilities.add(boon.name) : characterAbilities.delete(boon.name)
@@ -43,7 +43,7 @@ export default function Home(props: Props) {
           />
         }
       >
-        <ListItemButton sx={{ p: 0 }} disabled={!canUseEffect(boon)} onClick={() => {
+        <ListItemButton sx={{ p: 0 }} disabled={(!canUseEffect(boon) || characterAbilities.size >= 8) && !characterAbilities.has(boon.name)} onClick={() => {
           characterAbilities.has(boon.name) ? characterAbilities.delete(boon.name) : characterAbilities.add(boon.name)
           setCharacter({
             ...character,

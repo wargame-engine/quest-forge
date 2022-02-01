@@ -1,5 +1,5 @@
-import { createTheme, IconButton, PaletteMode, Stack, ThemeProvider, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { Box, createTheme, IconButton, PaletteMode, ThemeProvider, useMediaQuery, useTheme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { MainAppBar } from 'components/app-bar';
 import { Appdrawer } from 'components/app-drawer';
@@ -12,13 +12,13 @@ import {
   Navigate, Route, Routes
 } from "react-router-dom";
 import {
-  Attributes, Bane, Boon, Boons, Characters, Equipment,
+  Attributes, Bane, Boon, Boons, CharacterEditor, Characters, Equipment,
   Equipments, Feat, Feats, Home, License, Rules,
-  Settings, CharacterEditor
+  Settings
 } from 'routes';
+import { CHAPTERS } from 'routes/rules/rules';
 import { getColor } from 'utils/colors';
 import './App.css';
-import { CHAPTERS } from 'routes/rules/rules';
 
 function App() {
   const [userPrefs, setUserPrefs] = useLocalStorage("userPrefs", {});
@@ -35,6 +35,8 @@ function App() {
       setSearchMode(false);
     }
   }, []);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.up("md"));
   const appContextValue = {
     drawerOpen,
     setDrawerOpen,
@@ -62,10 +64,12 @@ function App() {
   const userTheme = userPrefs?.theme;
   const themeId = (!userTheme || userTheme === 'system') ? browserTheme : userTheme;
   const userPrimaryColor = getColor(userPrefs?.primaryColor)?.import || getColor('blue')?.import;
-  const theme = createTheme({
+  const userSecondaryColor = getColor(userPrefs?.secondaryColor)?.import || getColor('blue')?.import;
+  const customTheme = createTheme({
     palette: {
       mode: themeId,
-      primary: userPrimaryColor
+      primary: userPrimaryColor,
+      secondary: userSecondaryColor
     },
     typography: {
       fontSize: 12,
@@ -98,7 +102,7 @@ function App() {
   const firstChapter = Object.keys(CHAPTERS)[0] || 'introduction';
   return (
     <div>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={customTheme}>
         <ModalProvider>
           <SnackbarProvider
             ref={notistackRef}
@@ -112,7 +116,7 @@ function App() {
             <AppContext.Provider value={appContextValue}>
               <CssBaseline />
               <MainAppBar />
-              <Stack direction="row">
+              <Box sx={{ ml: fullScreen ? '250px' : '0', mb: 2 }}>
                 <Appdrawer />
                 <Routes>
                   <Route path="license" element={<License />} />
@@ -133,7 +137,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>
-              </Stack>
+              </Box>
             </AppContext.Provider>
           </SnackbarProvider>
         </ModalProvider>

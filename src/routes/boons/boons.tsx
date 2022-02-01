@@ -17,10 +17,21 @@ export default function Boons() {
       setEnableSearch(false);
     }
   }, [ setEnableSearch ]);
-  let boonList = [ ...Object.values(boons.boons), ...Object.values(banes.banes) ].filter((boon: any) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
+  const boonsData: any = boons.boons;
+  const banesData: any = banes.banes;
+  let boonList = [
+    ...Object.keys(boons.boons).map((boonKey) => ({
+      ...boonsData[boonKey],
+      id: boonKey
+    })),
+    ...Object.keys(banes.banes).map((baneKey) => ({
+      ...banesData[baneKey],
+      id: baneKey
+    }))
+  ];
+  boonList = boonList.filter((boon: any) => boon?.name?.toLocaleLowerCase()?.includes(searchText?.toLocaleLowerCase()));
   boonList = sortBy(boonList, 'name');
   const navigate = useNavigate();
-
   return (
     <Container sx={{ mb: 2 }}>
       <Typography align="center" variant="h4" sx={{ my: 2 }}>
@@ -31,7 +42,7 @@ export default function Boons() {
           <Card
             className="no-break"
             key={index}
-            onClick={() => boon?.attribute ? navigate(`/boon/${boon.name}`) : navigate(`/bane/${boon.name}`)}
+            onClick={() => boon?.attribute ? navigate(`/boon/${boon.id}`) : navigate(`/bane/${boon.id}`)}
             sx={{ mb: 1 }}
           >
             <CardActionArea

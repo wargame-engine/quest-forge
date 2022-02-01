@@ -118,8 +118,8 @@ export default function Characters() {
       <Card
         sx={{
           mb: 1,
-          backgroundColor: theme.palette.primary.main,
-          color: theme.palette.getContrastText(theme.palette.primary.main)
+          backgroundColor: theme.palette.secondary.main,
+          color: theme.palette.getContrastText(theme.palette.secondary.main)
         }}
       >
         <ListItemButton sx={{ py: 1 }} onClick={() => createNewCharacter()}>
@@ -189,7 +189,7 @@ export default function Characters() {
             <ListItemButton sx={{ py: 0 }} onClick={noop}>
               <ListItemText
                 primary={boon.name}
-                secondary={boon.background}
+                secondary={boon.description}
               />
             </ListItemButton>
           </ListItem>

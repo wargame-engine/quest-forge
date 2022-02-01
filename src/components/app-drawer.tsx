@@ -9,6 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import StraightenIcon from '@mui/icons-material/Straighten';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Collapse, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
@@ -100,16 +101,25 @@ export function Appdrawer() {
       id: 'divider'
     },
     {
-      id: 'settings',
-      name: 'Settings',
-      icon: <SettingsIcon />,
-      to: '/settings'
+      id: 'github',
+      name: 'GitHub',
+      icon: <GitHubIcon />,
+      toAbs: 'https://github.com/wargame-engine/quest-forge'
     },
     {
       id: 'license',
       name: 'License',
       icon: <ArticleIcon />,
       to: '/license'
+    },
+    {
+      id: 'divider'
+    },
+    {
+      id: 'settings',
+      name: 'Settings',
+      icon: <SettingsIcon />,
+      to: '/settings'
     }
   ];
   const renderMenuItem = (item: NavItem, index: number) => {

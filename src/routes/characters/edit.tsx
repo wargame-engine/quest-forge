@@ -59,10 +59,10 @@ export default function Home() {
       <Toolbar />
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar sx={{ justifyContent: "end" }}>
-          <Button variant="contained" onClick={() => setCurrentTab(currentTab - 1)} disabled={currentTab === 0}>
+          <Button sx={{ color: 'inherit' }} onClick={() => setCurrentTab(currentTab - 1)} disabled={currentTab === 0}>
             Previous
           </Button>
-          <Button sx={{ ml: 1 }} variant="contained" onClick={() => setCurrentTab(currentTab + 1)} disabled={currentTab === (Object.values(TABS).length - 1)}>
+          <Button sx={{ ml: 1, color: 'inherit' }} onClick={() => setCurrentTab(currentTab + 1)} disabled={currentTab === (Object.values(TABS).length - 1)}>
             Next
           </Button>
         </Toolbar>
