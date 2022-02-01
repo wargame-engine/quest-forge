@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.92833a7d.css",
-    "main.js": "/static/js/main.ed30a212.js",
+    "main.css": "/static/css/main.188b99fb.css",
+    "main.js": "/static/js/main.a5fd850a.js",
     "static/js/787.def59fd1.chunk.js": "/static/js/787.def59fd1.chunk.js",
+    "static/media/splash.jpg": "/static/media/splash.adfcb568c8a62d0cb862.jpg",
+    "static/media/logo_large.png": "/static/media/logo_large.40e07167f169730233ba.png",
     "static/media/license.webp": "/static/media/license.df7d07f98ce72aabd828.webp",
     "static/media/logo.png": "/static/media/logo.60c74805c3c1552a1320.png",
-    "static/media/2_characters.md": "/static/media/2_characters.ee5fd3d3b484c9555c99.md",
+    "static/media/2_characters.md": "/static/media/2_characters.50e1391c60c56c790b91.md",
     "index.html": "/index.html",
+    "static/media/3_attribute_tests.md": "/static/media/3_attribute_tests.907f651438c5e41281de.md",
+    "static/media/1_introduction.md": "/static/media/1_introduction.b3e24bb65cf9329216ad.md",
     "static/media/index.cjs": "/static/media/index.06ad11ea3e32fd3e4303.cjs",
-    "static/media/3_attribute_tests.md": "/static/media/3_attribute_tests.0e92a3bb1ca17b144f2d.md",
-    "static/media/1_introduction.md": "/static/media/1_introduction.3876abc484260070728d.md",
-    "main.92833a7d.css.map": "/static/css/main.92833a7d.css.map",
-    "main.ed30a212.js.map": "/static/js/main.ed30a212.js.map",
+    "static/media/4_abilities_effects.md": "/static/media/4_abilities_effects.8b4994a9db057d62ac28.md",
+    "static/media/8_game_mastering.md": "/static/media/8_game_mastering.a6b91d98cb1479f1e409.md",
+    "static/media/5_equipment.md": "/static/media/5_equipment.8b1337ffa1f28987596d.md",
+    "static/media/6_combat.md": "/static/media/6_combat.2402a9349f15b25029c4.md",
+    "static/media/7_npcs_and_enemies.md": "/static/media/7_npcs_and_enemies.bfa010cf8ecca2583a12.md",
+    "main.188b99fb.css.map": "/static/css/main.188b99fb.css.map",
+    "main.a5fd850a.js.map": "/static/js/main.a5fd850a.js.map",
     "787.def59fd1.chunk.js.map": "/static/js/787.def59fd1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92833a7d.css",
-    "static/js/main.ed30a212.js"
+    "static/css/main.188b99fb.css",
+    "static/js/main.a5fd850a.js"
   ]
 }
