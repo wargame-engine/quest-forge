@@ -68,7 +68,7 @@ export default function Home() {
     },
     equipment: {
       name: "Equipment",
-      tab: <Equipment character={theCharacter} setCharacter={setCharacter} />
+      tab: <Equipment />
     },
   };
   return (
