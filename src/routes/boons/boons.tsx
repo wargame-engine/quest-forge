@@ -1,4 +1,4 @@
-import { CardActionArea, Chip, Container } from '@mui/material';
+import { Box, CardActionArea, Chip, Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import banes from 'assets/data/banes.json';
@@ -43,11 +43,11 @@ export default function Boons() {
                 <Chip label={boon?.attribute ? 'Boon' : 'Bane'} color={boon?.attribute ? "success" : "error"} variant="outlined" size="small" sx={{ ml: 1 }} />
                 <Chip label={boon.power.join('/') + " PL"} color="info" variant="outlined" size="small" sx={{ ml: 1 }} />
               </Typography>
-              <Typography>
+              <Box>
                 {(boon?.attribute ?? boon.attackAttributes).map((attribute: any, index: number) => (
                   <Chip key={index} label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-              </Typography>
+              </Box>
               <Typography>
                 {boon.description}
               </Typography>

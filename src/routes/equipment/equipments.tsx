@@ -1,4 +1,4 @@
-import { CardActionArea, Chip, Container } from '@mui/material';
+import { Box, CardActionArea, Chip, Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import equipment from 'assets/data/equipment.json';
@@ -31,10 +31,10 @@ export default function Equipments() {
         Equipment List
       </Typography>
       <div>
-        {boonList.map((boon) => (
+        {boonList.map((boon: any, index: number) => (
           <Card
             className="no-break"
-            key={boon.name}
+            key={index}
             onClick={() => navigate(`/equipment/${boon.id}`)}
             sx={{ mb: 1 }}
           >
@@ -45,19 +45,19 @@ export default function Equipments() {
                 {boon.name}
                 <div style={{ flexGrow: 1 }} />
               </Typography>
-              <Typography>
-                {boon?.types?.map((attribute: any) => (
-                  <Chip label={attribute} color="secondary" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+              <Box>
+                {boon?.types?.map((attribute: any, index: number) => (
+                  <Chip key={index}  label={attribute} color="secondary" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-                {Object.values(boon?.attackAttributes ?? {}).map((attribute: any) => (
-                  <Chip label={attribute ?? ''} color="success" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+                {Object.values(boon?.attackAttributes ?? {}).map((attribute: any, index: number) => (
+                  <Chip key={index}  label={attribute ?? ''} color="success" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-                {Object.values(boon?.rules ?? {}).map((attribute: any) => (
-                  <Chip label={attribute ?? ''} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+                {Object.values(boon?.rules ?? {}).map((attribute: any, index: number) => (
+                  <Chip key={index} label={attribute ?? ''} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
                 {!!boon?.bulk && <Chip label={boon.bulk + " BL" ?? '-'} color="info" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />}
                 <Chip label={boon.wealth + " WL" ?? '-'} color="success" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
-              </Typography>
+              </Box>
               <Typography>
                 {boon?.description}
               </Typography>

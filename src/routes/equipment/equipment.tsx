@@ -29,39 +29,39 @@ export default function Equipment() {
           <Typography variant="h6" gutterBottom>
             Type
           </Typography>
-          <Typography>
-            {theBoon?.types?.map((attribute: any) => (
-              <Chip label={attribute} color="secondary" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+          <Box>
+            {theBoon?.types?.map((attribute: any, index: number) => (
+              <Chip key={index} label={attribute} color="secondary" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
             ))}
-          </Typography>
+          </Box>
         </Box>
         <Box className="no-break" sx={{ mb: 1 }}>
           <Typography variant="h6" gutterBottom>
             Statistics
           </Typography>
-          <Typography>
+          <Box>
             {!!theBoon?.damage && <Chip label={theBoon.damage + " D" ?? '-'} color="error" variant="outlined" size="small" sx={{ mr: 1 }} />}
             {!!theBoon?.bulk && <Chip label={theBoon.bulk + " BL" ?? '-'} color="info" variant="outlined" size="small" sx={{ mr: 1 }} />}
             <Chip label={theBoon.wealth + " WL"} color="success" variant="outlined" size="small" />
-          </Typography>
+          </Box>
         </Box>
         <Box className="no-break">
           <Typography variant="h6" gutterBottom>
             Attack Attributes
           </Typography>
-          <Typography>
-            {Object.values(theBoon?.attackAttributes ?? {}).map((attribute: any) => (
-              <Chip label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+          <Box>
+            {Object.values(theBoon?.attackAttributes ?? {}).map((attribute: any, index: number) => (
+              <Chip key={index} label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
             ))}
-          </Typography>
+          </Box>
         </Box>
         <Box className="no-break">
           <Typography variant="h6" gutterBottom>
             Critical Effects
           </Typography>
           <Typography>
-            {Object.values(theBoon?.banes ?? {}).map((attribute: any) => (
-              <Link component="button" onClick={() => navigate(`/bane/${attribute}`)} sx={{ mr: 1, mb: 1 }}>{attribute}</Link>
+            {Object.values(theBoon?.banes ?? {}).map((attribute: any, index: number) => (
+              <Link key={index} component="button" onClick={() => navigate(`/bane/${attribute}`)} sx={{ mr: 1, mb: 1 }}>{attribute}</Link>
             ))}
           </Typography>
         </Box>
@@ -71,12 +71,12 @@ export default function Equipment() {
           Properties
         </Typography>}
         <Box className={Object.values(theBoon?.properties ?? {}).length > 1 ? "columns" : ""}>
-          {Object.keys(theBoon?.properties ?? {}).map((attribute: any) => {
+          {Object.keys(theBoon?.properties ?? {}).map((attribute: any, index: number) => {
             const theRule = ruleData[attribute.toLocaleLowerCase()];
             if (!theRule) {
               return (
                 <>
-                  <Typography className="no-break" paragraph>
+                  <Typography key={index} className="no-break" paragraph>
                     <strong>{attribute}</strong>
                   </Typography>
                 </>
@@ -84,7 +84,7 @@ export default function Equipment() {
             }
             return (
               <>
-                <Typography className="no-break" paragraph>
+                <Typography key={index} className="no-break" paragraph>
                   <strong>{theBoon?.properties[attribute]}</strong> - {theRule?.description}
                 </Typography>
               </>

@@ -1,4 +1,4 @@
-import { CardActionArea, Chip, Container } from '@mui/material';
+import { CardActionArea, Chip, Container, Box } from '@mui/material';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import boons from 'assets/data/feats.json';
@@ -24,10 +24,10 @@ export default function Feats() {
         Feat List
       </Typography>
       <div>
-        {boonList.map((boon) => (
+        {boonList.map((boon: any, index: number) => (
           <Card
             className="no-break"
-            key={boon.name}
+            key={index}
             onClick={() => navigate(`/feat/${boon.name}`)}
             sx={{ mb: 1 }}
           >
@@ -39,11 +39,11 @@ export default function Feats() {
                 <div style={{ flexGrow: 1 }} />
                 <Chip label={boon.cost.join('/')} color="info" variant="outlined" size="small" sx={{ ml: 1 }} />
               </Typography>
-              <Typography>
-                {boon?.tags?.map((attribute: string) => (
-                  <Chip label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
+              <Box>
+                {boon?.tags?.map((attribute: string, index: number) => (
+                  <Chip key={index} label={attribute} color="warning" variant="outlined" size="small" sx={{ mr: 1, mb: 1 }} />
                 ))}
-              </Typography>
+              </Box>
               <Typography>
                 {boon.description}
               </Typography>
