@@ -13,11 +13,12 @@ import {
 } from "react-router-dom";
 import {
   Attributes, Bane, Boon, Boons, Characters, Equipment,
-  Equipments, Feat, Feats, Home, License, Rule,
+  Equipments, Feat, Feats, Home, License, Rules,
   Settings, CharacterEditor
 } from 'routes';
 import { getColor } from 'utils/colors';
 import './App.css';
+import { CHAPTERS } from 'routes/rules/rules';
 
 function App() {
   const [userPrefs, setUserPrefs] = useLocalStorage("userPrefs", {});
@@ -94,6 +95,7 @@ function App() {
       }
     },
   });
+  const firstChapter = Object.keys(CHAPTERS)[0] || 'introduction';
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -115,7 +117,8 @@ function App() {
                 <Routes>
                   <Route path="license" element={<License />} />
                   <Route path="settings" element={<Settings />} />
-                  <Route path="rules" element={<Rule />} />
+                  <Route path="rules" element={<Navigate replace to={`/rules/${firstChapter}`} />} />
+                  <Route path="rules/:page" element={<Rules />} />
                   <Route path="rule/:id" element={<Boon />} />
                   <Route path="characters" element={<Characters />} />
                   <Route path="character/:id" element={<CharacterEditor />} />

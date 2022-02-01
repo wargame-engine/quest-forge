@@ -25,7 +25,21 @@ export default function Home(props: props) {
         />
         <TextField
           size="small"
-          rows={12}
+          rows={4}
+          fullWidth
+          label="Appearance"
+          multiline
+          value={character.appearance}
+          onChange={((event) => {
+            setCharacter({
+              ...character,
+              appearance: event?.target?.value
+            });
+          })}
+        />
+        <TextField
+          size="small"
+          rows={8}
           fullWidth
           label="Background"
           multiline

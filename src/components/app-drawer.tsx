@@ -18,6 +18,7 @@ import { AppContext } from 'hooks/appcontext';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Dropdown } from './dropdown';
+import { CHAPTERS } from 'routes/rules/rules';
 
 type NavItem = {
   id: string,
@@ -46,20 +47,15 @@ export function Appdrawer() {
       id: 'rules',
       name: 'Rules',
       icon: <StraightenIcon />,
-      to: '/rules',
       children: [
-        {
-          id: 'core-rules',
-          name: 'Core Rules',
-          icon: <BookmarkIcon />,
-          to: '/rules'
-        },
-        {
-          id: 'attributes',
-          name: 'Attributes',
-          icon: <BookmarkIcon />,
-          to: '/attributes'
-        }
+        ...(Object.keys(CHAPTERS).map((key) => (
+          {
+            id: key,
+            name: CHAPTERS[key].name,
+            icon: <BookmarkIcon />,
+            to: `/rules/${key}`
+          }
+        )))
       ]
     },
     {
